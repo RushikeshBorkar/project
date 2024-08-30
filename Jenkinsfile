@@ -1,6 +1,6 @@
 pipeline {
 agent { 
-label "built-in"
+label "any"
 customWorkspace "/root/project"		
 }
 stages {
