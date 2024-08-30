@@ -1,10 +1,12 @@
 pipeline {
-agent { 
-label "built-in"
-customWorkspace "/root/project"		
-}
+agent any
 stages {
-	stage("one"){
+	 stage("one"){
+	     agent {
+                    label "built-in"
+                     customWorkspace "/root/project"		
+                   }
+	
 		steps{
 			sh "mvn clean install"
 			sh " cp /root/project/target/LoginWebApp.war /mnt/servers/apache-tomcat-9.0.93/webapps/"
