@@ -13,8 +13,8 @@ stages {
 			sh "cd /root/project"
 			sh "mvn clean install"
 			sh " cp /root/project/target/LoginWebApp.war /mnt/server/apache-tomcat-9.0.93/webapps/"
-			sh "cd ../bin/"
-			sh "./shutdown.sh"
+			sh "cd /mnt/server/apache-tomcat-9.0.93/bin"
+			
 			sh " ./startup.sh"
 			
 		}
