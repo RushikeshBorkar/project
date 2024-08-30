@@ -10,7 +10,7 @@ stages {
 	 stage("one"){
 	    
 		steps{
-			sh "/root/project"
+			sh "cd /root/project"
 			sh "mvn clean install"
 			sh " cp /root/project/target/LoginWebApp.war /mnt/servers/apache-tomcat-9.0.93/webapps/"
 			sh "cd ../bin/"
