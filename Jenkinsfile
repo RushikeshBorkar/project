@@ -15,7 +15,7 @@ stages {
 			sh " cp /root/project/target/LoginWebApp.war /mnt/server/apache-tomcat-9.0.93/webapps/"
 			sh "cd /mnt/server/apache-tomcat-9.0.93/bin"
 			
-			sh " ./startup.sh"
+			
 			
 		}
 	}
