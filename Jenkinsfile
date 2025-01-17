@@ -26,7 +26,7 @@ pipeline{
 			stage("deploy"){
 			steps{
 			
-			sh "scp -i /home/ec2-user/moba.pem -o StrictHostKeyChecking=no /home/ec2-user/project1/project/target/LoginWebApp.war ec2-user@172.31.31.151:/home/ec2-user/apache-tomcat-9.0.98/webapps"
+			sh "sudo scp -i "/home/ec2-user/moba.pem" -o StrictHostKeyChecking=no /home/ec2-user/project1/project/target/LoginWebApp.war ec2-user@172.31.31.151:/home/ec2-user/apache-tomcat-9.0.98/webapps"
 			
 			}
 			
