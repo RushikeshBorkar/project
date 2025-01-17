@@ -18,7 +18,7 @@ pipeline{
 			stage("build"){
 			steps{
 			sh "sudo rm -rf /home/ec2-user/.m2/repository"
-			sh "sudo cd /mnt/project1/project/ && sudo mvn clean install"
+			sh "sudo cd /mnt/project1/project/ && mvn clean install"
 			}
 			
 			}
