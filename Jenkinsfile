@@ -2,7 +2,7 @@ pipeline{
 	agent{
 	node{
 	label "built-in"
-	customWorkspace "/mnt/project1"
+	customWorkspace "/home/ec2-user/project1"
 	}
 	
 	}
@@ -18,14 +18,15 @@ pipeline{
 			stage("build"){
 			steps{
 			sh "sudo rm -rf /home/ec2-user/.m2/repository"
-			sh "mvn -f /mnt/project1/project clean install"
+			sh "mvn -f /home/ec2-user/project1/project clean install"
 			}
 			
 			}
 			
 			stage("deploy"){
 			steps{
-			sh "scp -i /home/ec2-user/moba.pem -o StrictHostKeyChecking=no mnt/project1/project/target/LoginWebApp.war ec2-user@172.31.31.151:/home/ec2-user/home/ec2-user/apache-tomcat-9.0.98/webapps"
+			sh "chmod -R"	
+			sh "scp -i /home/ec2-user/moba.pem -o StrictHostKeyChecking=no /home/ec2-user/project1/project/target/LoginWebApp.war ec2-user@172.31.31.151:/home/ec2-user/home/ec2-user/apache-tomcat-9.0.98/webapps"
 			
 			}
 			
